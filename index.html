@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LetJSON</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div id="header">
+      <h1>LetJSON</h1>
+      <h3>Turn raw JSON into a user-friendly form.</h3>
+
+      <p>Paste your JSON -> Fill new values in form -> Generate new JSON</p>
+    </div>
+
+    <div id="inputArea">
+      <textarea
+        id="jsonField"
+        rows="5"
+        cols="50"
+        placeholder="Paste JSON here"
+      ></textarea>
+    </div>
+
+    <div id="buttons">
+      <button onclick="validateJSON()">Check</button>
+      <p id="object"></p>
+
+      <button onclick="parseType()">Parse type</button>
+      <p id="objectType"></p>
+    </div>
+
+    <div id="form">
+      <form id="jsonForm"></form>
+    </div>
+  </body>
+
+  <script src="script.js"></script>
+</html>
