@@ -6,36 +6,49 @@
     <title>LetJSON</title>
     <link href="styles.css" rel="stylesheet" />
   </head>
-
   <body>
-    <div id="header">
-      <h1>LetJSON</h1>
-      <h3>Turn raw JSON into a user-friendly form.</h3>
+    <header id="topbar">
+      <div class="brand-block">
+        <div class="brand"><span class="prompt">&gt;_</span> LetJSON</div>
+        <p class="tagline">Generate new JSON data with only 3 steps</p>
+      </div>
+      <ol class="progress">
+        <li class="step active" data-step="1">
+          <span class="dot">1</span><span class="label">Paste</span>
+        </li>
+        <li class="step" data-step="2">
+          <span class="dot">2</span><span class="label">Fill</span>
+        </li>
+        <li class="step" data-step="3">
+          <span class="dot">3</span><span class="label">Generate</span>
+        </li>
+      </ol>
+    </header>
 
-      <p>Paste your JSON -> Fill new values in form -> Generate new JSON</p>
-    </div>
+    <main id="stage">
+      <section class="panel" id="panel-paste">
+        <h2 class="panel-title">// 01 - Paste JSON</h2>
+        <textarea id="jsonField" placeholder="Paste JSON here"></textarea>
+        <p id="error" class="error"></p>
+        <button onclick="parseJSON()">Check</button>
+      </section>
 
-    <div id="inputArea">
-      <textarea
-        id="jsonField"
-        rows="5"
-        cols="50"
-        placeholder="Paste JSON here"
-      ></textarea>
-    </div>
+      <section class="panel" id="panel-fill">
+        <h2 class="panel-title">// 02 - Fill form</h2>
+        <form id="jsonForm"></form>
+      </section>
 
-    <div id="buttons">
-      <button onclick="validateJSON()">Check</button>
-      <p id="object"></p>
+      <section class="panel" id="panel-out">
+        <h2 class="panel-title">// 03 - Output</h2>
+        <pre id="output"></pre>
+        <div class="actions">
+          <button id="generateBtn" onclick="generateJSON()">Generate JSON</button>
+          <button onclick="copyJSON()">Copy</button>
+          <button onclick="downloadJSON()">Download .json</button>
+        </div>
+      </section>
+    </main>
 
-      <button onclick="parseType()">Parse type</button>
-      <p id="objectType"></p>
-    </div>
-
-    <div id="form">
-      <form id="jsonForm"></form>
-    </div>
+    <script src="script.js"></script>
   </body>
-
-  <script src="script.js"></script>
 </html>
